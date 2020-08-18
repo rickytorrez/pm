@@ -32,7 +32,6 @@ public class ProjectController {
 	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result){
 		
 		ResponseEntity<?> errorMap = _vS.MapValidationService(result);
-		
 		if(errorMap != null) return errorMap;
 		
 		Project _project = _pS.saveOrUpdateProject(project);
